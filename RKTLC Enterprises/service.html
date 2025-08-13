@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RKTLC Enterprises - service</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/RKTLC_Logo-removebg-preview.png" />
+
+  <!-- Bootstrap, Font Awesome, Google Fonts -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .top-bar {
+      background: #2c3e50;
+      color: white;
+      font-size: 0.9em;
+      padding: 10px 30px;
+    }
+
+    .top-bar a {
+    text-decoration: none;
+    font-size: 14px;
+  }
+  .top-bar .social-icons a {
+    font-size: 16px;
+  }
+    .contact-info a {
+      color: white;
+      text-decoration: none;
+      margin-right: 15px;
+      transition: color 0.3s ease;
+    }
+
+    .contact-info a i {
+      color: white;
+      transition: color 0.3s ease;
+    }
+
+    .contact-info a:hover,
+    .contact-info a:hover i {
+      color: #00bcd4;
+    }
+
+    .social-icons a {
+      color: white;
+      margin-left: 15px;
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+      font-size: 1.1rem;
+    }
+
+    /* Social Icons Hover Effects with Glow */
+.social-icons a[href*="whatsapp"]:hover {
+  color: #25D366; /* WhatsApp green */
+  text-shadow: 0 0 8px rgba(37, 211, 102, 0.8);
+}
+
+.social-icons a.twitter:hover {
+  color: #1da1f2;
+  text-shadow: 0 0 8px rgba(29, 161, 242, 0.8);
+}
+
+.social-icons a[href*="instagram"]:hover {
+  color: #e1306c; /* Instagram pink */
+  text-shadow: 0 0 8px rgba(225, 48, 108, 0.8);
+}
+
+.social-icons a[href*="youtube"]:hover {
+  color: #FF0000; /* YouTube red */
+  text-shadow: 0 0 8px rgba(255, 0, 0, 0.8);
+}
+
+
+/* Google */
+.social-icons a.google:hover {
+  color: #DB4437;
+  text-shadow: 0 0 8px rgba(219, 68, 55, 0.8);
+}
+
+    .navbar-brand img {
+      height: 60px;
+      width: auto;
+      max-height: 70px;
+    }
+
+    .navbar-nav .nav-link {
+      color: #333;
+      transition: color 0.3s, background 0.3s;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #0077cc;
+      background-color: rgba(0, 119, 204, 0.1);
+      border-radius: 5px;
+      padding: 6px 12px;
+    }
+
+    .hero {
+      background-image: url(slide1.jpeg);
+      background-size: cover;
+      background-position: center;
+      padding: 80px 20px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero h1 {
+      color: #00e6e6;
+      font-weight: 800;
+    }
+
+    .hero p {
+      color: #ffffff;
+    }
+
+    .hero-title {
+      font-size: 3em;
+      margin-bottom: 0.3em;
+      animation: fadeSlideIn 2s ease forwards;
+      opacity: 0;
+    }
+
+    .hero-title::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background-color: #00bcd4;
+      margin: 12px auto 0;
+      border-radius: 2px;
+      animation: underlineGrow 2s ease forwards 1s;
+      transform: scaleX(0);
+      transform-origin: center;
+    }
+
+    .hero-subtext {
+      font-size: 1.3em;
+      color: #e0e0e0;
+      margin-top: 15px;
+      animation: fadeInUp 2s ease 1.5s forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeSlideIn {
+      0% { opacity: 0; transform: translateY(40px) scale(0.95); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes underlineGrow {
+      0% { transform: scaleX(0); }
+      100% { transform: scaleX(1); }
+    }
+
+    .services, .about {
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      margin-top: 30px;
+      padding: 40px;
+    }
+    .services {
+  background: #d0f0fd; /* light blue */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  margin-top: 30px;
+  padding: 40px;
+}
+
+
+    .contact {
+      background: #ffffff;
+      border-radius: 12px;
+      /* Shadow removed */
+      margin-top: 30px;
+      padding: 40px;
+    }
+
+    .services ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .services li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 15px;
+      font-size: 1rem;
+    }
+
+    .services li .check-icon {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 30px;
+      height: 30px;
+      background-color: #e0f7fa;
+      color: #0097a7;
+      border-radius: 50%;
+      font-size: 14px;
+    }
+
+    .highlight {
+      color: #0077cc;
+      font-weight: 800;
+    }
+
+    footer {
+      background: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 60px;
+    }
+
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2em;
+      }
+      .hero-subtext {
+        font-size: 1em;
+      }
+    }
+ .blog-card img {
+    height: 220px;
+    object-fit: cover;
+    border-top-left-radius: 0.75rem;
+    border-top-right-radius: 0.75rem;
+    transition: transform 0.3s ease;
+  }
+
+  .blog-card:hover img {
+    transform: scale(1.05);
+  }
+
+  .blog-card {
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+
+  .blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  }
+
+  .highlight {
+    color: #007bff;
+  }
+
+  .social-icons a[href*="whatsapp"] {
+  color: #25D366; /* WhatsApp green */
+}
+
+.social-icons a.twitter {
+  color: #1DA1F2; /* Twitter blue */
+}
+
+.social-icons a[href*="instagram"] {
+  color: #E1306C; /* Instagram pink */
+}
+
+.social-icons a[href*="youtube"] {
+  color: #FF0000; /* YouTube red */
+}
+
+.social-icons a.google {
+  color: #DB4437; /* Google red */
+}
+
+.social-icons a[href*="linkedin"] {
+  color: #0A66C2; /* LinkedIn blue */
+}
+.social-icons a.pinterest {
+  color: #E60023; /* Official Pinterest red */
+}
+
+.social-icons a.pinterest:hover {
+  color: #b3001b; /* Darker red on hover */
+  text-shadow: 0 0 8px rgba(230, 0, 35, 0.8);
+}
+
+
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+<div class="top-bar d-flex flex-wrap justify-content-between align-items-center p-2 bg-dark text-white">
+  <!-- Contact Info -->
+  <div class="contact-info d-flex flex-wrap align-items-center">
+    <a href="mailto:rktlcenterprises@gmail.com" class="text-white me-3">
+      <i class="fas fa-envelope me-1"></i> rktlcenterprises@gmail.com
+    </a>
+    <a href="tel:+917975854144" class="text-white">
+      <i class="fas fa-phone me-1"></i> 7975854144
+    </a>
+  </div>
+      <div class="social-icons">
+        <a href="https://whatsapp.com/channel/0029VbAW7iUI1rcbwdF4iN28" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.linkedin.com/feed/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://x.com/RktlcE" class="twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/rktlc_enterprises" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com/@rktlcenterprises" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.pinterest.com/yourprofile" target="_blank" class="pinterest" aria-label="Pinterest Profile">
+  <i class="fab fa-pinterest"></i>
+</a>
+
+
+        <a href="https://www.google.com/search?q=RKTLC+Enterprises&stick=H4sIAAAAAAAA_-NgU1I1qDBOSkw1tExKSzQ0NjA3TTG0MqgwtEg0S01OSzE3SUxLtTQwWMQqGOQd4uOs4JpXklpUUJRZnFoMAAEYiWA9AAAA&hl=en&mat=CSBT1euKDfELElcBYJahaYjKzygYWHJ49uyx2tmpQk-0ykmZF2Lc4K6izJLHzcMxHp62tdIEu1efOH74H7Y_-QAoYaQKU3CUyr0XxkJVXRZCLvyoa0IIuMsDX7PzrJHNSMg&authuser=0" class="google" target="_blank"><i class="fab fa-google"></i></a>
+      </div>
+    </div>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="RKTLC_Logo-removebg-preview.png" alt="RKTLC Logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link fw-semibold" href="Home.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold" href="service.html#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold" href="service.html#about">About</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold" href="Blog.html">Blogs</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold" href="service.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <h1 class="hero-title">RKTLC Enterprises</h1>
+    <p class="hero-subtext">Where Innovation Transforms Possibility Into Progress</p>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <section id="services" class="services">
+      <h2 class="animate__animated animate__fadeInUp animate__delay-1s">
+        <span class="highlight">Our Services</span>
+      </h2>
+      <p>We specialize in simplifying complexity for forward-thinking businesses. Our service offerings include:</p>
+      <ul>
+        <li><span class="check-icon"><i class="fas fa-check"></i></span> Import Export Code (IEC)</li>
+        <li><span class="check-icon"><i class="fas fa-check"></i></span> Export Promotion Capital Goods (EPCG)</li>
+        <li><span class="check-icon"><i class="fas fa-check"></i></span> Dutyfree Import Authorization Scheme</li>
+        <li><span class="check-icon"><i class="fas fa-check"></i></span> Licence for restricted Import Items </li>
+         <li><span class="check-icon"><i class="fas fa-check"></i></span> Rodtep</li>
+        <li><span class="check-icon"><i class="fas fa-check"></i></span> Advanced Authorization Scheme</li>
+        <li><span class="check-icon"><i class="fas fa-check"></i></span> ROSCTL</li>
+        <li><span class="check-icon"><i class="fas fa-check"></i></span> Deemed Export Benefits</li>
+        <li><span class="check-icon"><i class="fas fa-check"></i></span> Country of Origin Documentation</li>
+        <li><span class="check-icon"><i class="fas fa-check"></i></span> SEZ Scheme </li>
+        <li><span class="check-icon"><i class="fas fa-check"></i></span> EOU Scheme</li>
+        <li><span class="check-icon"><i class="fas fa-check"></i></span> GST Refund</li>
+        <li><span class="check-icon"><i class="fas fa-check"></i></span> Customs</li>
+        <li><span class="check-icon"><i class="fas fa-check"></i></span> Digital Marketing</li>
+        <li><span class="check-icon"><i class="fas fa-check"></i></span> Web Development</li>
+        <li><span class="check-icon"><i class="fas fa-check"></i></span> Other End to End Consulting</li>
+      </ul>
+    </section>
+
+    <section id="about" class="about">
+      <h2 class="animate__animated animate__fadeInUp animate__delay-1s">
+        <span class="highlight">About Us</span>
+      </h2>
+      <p style="text-align: justify;">
+        At RKTLC Enterprises, we believe in making modern business smarter, faster, and more sustainable. With our team of experts and technologists, we co-create solutions that deliver real results in real time.
+      </p>
+      <p style="text-align: justify;">
+        Our journey spans industries—tech, hospitality, healthcare, logistics—serving clients that demand excellence, agility, and innovation at scale.
+      </p>
+      <p style="text-align: justify;">
+        <strong>RKTLC Enterprises</strong> is a Bangalore-based business consulting firm offering specialized services in Export-Import Consultation, DGFT, SEZ, and EOU-related compliance. We also provide comprehensive solutions in Advertising & Marketing, including Digital Marketing, Brand Promotion, and Google presence enhancement. Our team offers expert support in Corporate Regulatory and Legal Compliance, including licensing, documentation, and strategic advisory. With a strong focus on end-to-end business consultation, we help businesses streamline operations, ensure regulatory clarity, and grow sustainably through targeted marketing and compliance support.
+      </p>
+    </section>
+
+
+
+
+    <section id="contact" class="contact">
+      <h2 class="animate__animated animate__fadeInUp animate__delay-1s">
+        <span class="highlight">Let's Connect</span>
+      </h2>
+      <p class="text-info fw-semibold">Ready to move your business forward? Get in touch with us today.</p>
+      <div class="row justify-content-start mt-4">
+        <div class="col-lg-8">
+          <p><i class="fas fa-map-marker-alt me-2"></i><strong>Address:</strong> 403, Veeru Arcade, 99/2, 8th Cross, 20th Main Rd, G Block,Sahakaranagara, Bengaluru, Karnataka - 560092</p>
+          <p><i class="fas fa-envelope me-2"></i><strong>Email:</strong> <a href="mailto:rktlcenterprises@gmail.com">rktlcenterprises@gmail.com</a></p>
+          <p><i class="fas fa-phone me-2"></i><strong>Phone:</strong> <a href="tel:+917975854144">+91 79758 54144</a></p>
+          <p><i class="fas fa-map me-2"></i><strong>Google Maps:</strong> <a href="https://maps.app.goo.gl/8VF3rmETHkZbMdKq7" target="_blank">Find us on Google Maps</a></p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+<!-- Footer -->
+<footer class="footer bg-dark text-white py-4 mt-5">
+  <div class="container">
+    <div class="row text-center text-md-start">
+      
+      <!-- Useful Links Column -->
+      <div class="col-md-4 mb-4 mb-md-0">
+        <h5 class="mb-3">Useful Links</h5>
+        <ul class="list-unstyled">
+        <li><a href="service.html#services" class="text-white text-decoration-none">Services</a></li>
+            <li><a href="service.html#about" class="text-white text-decoration-none">About</a></li>
+            <li><a href="Blog.html" class="text-white text-decoration-none">Blogs</a></li>
+            <li><a href="service.html#contact" class="text-white text-decoration-none">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info Column -->
+      <div class="col-md-4 mb-4 mb-md-0">
+        <h5 class="mb-3">Contact Info</h5>
+        <p class="mb-1"><i class="fas fa-envelope me-2"></i> <a href="mailto:rktlcenterprises@gmail.com" class="text-white text-decoration-none">rktlcenterprises@gmail.com</a></p>
+        <p class="mb-1"><i class="fas fa-phone me-2"></i> <a href="tel:+917975854144" class="text-white text-decoration-none">+91 79758 54144</a></p>
+        <p><i class="fas fa-map-marker-alt me-2"></i> 403, Veeru Arcade, 99/2, 8th Cross, 20th Main Rd, Bengaluru, Karnataka 560092</p>
+      </div>
+
+      <!-- Follow Us Column -->
+      <div class="col-md-4">
+        <h5 class="mb-3">Follow Us On</h5>
+        <div class="social-icons d-flex justify-content-center justify-content-md-start gap-3 fs-4">
+          <a href="https://whatsapp.com/channel/0029VbAW7iUI1rcbwdF4iN28" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://www.linkedin.com/feed/" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://x.com/RktlcE" class="twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com/rktlc_enterprises" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://youtube.com/@rktlcenterprises" target="_blank"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.pinterest.com/yourprofile" target="_blank" class="pinterest" aria-label="Pinterest Profile">
+  <i class="fab fa-pinterest"></i>
+</a>
+
+          <a href="https://www.google.com/search?q=RKTLC+Enterprises" class="google" target="_blank"><i class="fab fa-google"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row mt-4">
+      <div class="col text-center small">
+        &copy; 2025 <strong>RKTLC Enterprises</strong>. All rights reserved.
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
