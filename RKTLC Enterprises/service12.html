@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>RKTLC Enterprises</title>
+  <link rel="icon" type="image/png" href="/RKTLC_Logo-removebg-preview.png" />
+
+<!-- FontAwesome for icons in top bar and footer -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+<!-- Bootstrap CSS for responsive navbar and layout -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<style>
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #ffffff;
+    color: #333;
+  }
+
+  /* === Top Bar === */
+  .top-bar {
+    background: #2c3e50;
+    color: white;
+    font-size: 0.9em;
+    padding: 10px 30px;
+  }
+  .top-bar a {
+    text-decoration: none;
+    font-size: 14px;
+  }
+  .top-bar .social-icons a {
+    font-size: 16px;
+  }
+
+  /* Social Icons - show brand colors by default */
+  .social-icons a {
+    margin-left: 15px;
+    font-size: 1.1rem;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    color: inherit; /* allow brand color */
+  }
+
+  /* Brand colors */
+  .social-icons a[href*="whatsapp"] {
+    color: #25D366;
+  }
+  .social-icons a[href*="linkedin"] {
+    color: #0077b5;
+  }
+  .social-icons a.twitter {
+    color: #1da1f2;
+  }
+  .social-icons a[href*="instagram"] {
+    color: #e1306c;
+  }
+  .social-icons a[href*="youtube"] {
+    color: #FF0000;
+  }
+  .social-icons a.google {
+    color: #DB4437;
+  }
+  .social-icons a.pinterest {
+    color: #bd081c;
+  }
+
+  /* Hover effects with glow */
+  .social-icons a[href*="whatsapp"]:hover {
+    text-shadow: 0 0 8px rgba(37, 211, 102, 0.8);
+  }
+  .social-icons a.twitter:hover {
+    text-shadow: 0 0 8px rgba(29, 161, 242, 0.8);
+  }
+  .social-icons a[href*="instagram"]:hover {
+    text-shadow: 0 0 8px rgba(225, 48, 108, 0.8);
+  }
+  .social-icons a[href*="youtube"]:hover {
+    text-shadow: 0 0 8px rgba(255, 0, 0, 0.8);
+  }
+  .social-icons a.google:hover {
+    text-shadow: 0 0 8px rgba(219, 68, 55, 0.8);
+  }
+  .social-icons a.pinterest:hover {
+    text-shadow: 0 0 8px rgba(189, 8, 28, 0.8);
+  }
+  .social-icons a[href*="linkedin"]:hover {
+    color: #004182; /* darker blue on hover */
+    text-shadow: 0 0 8px rgba(0, 65, 130, 0.8);
+  }
+
+  /* Navbar Height – Moderately Larger */
+.navbar {
+  min-height: 70px !important;   /* moderately taller */
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+}
+
+/* Container inside navbar */
+.navbar .container {
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+}
+
+/* Navbar brand/logo */
+.navbar-brand {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Navbar links */
+.navbar-nav .nav-link {
+  padding-top: 0.5rem !important;  
+  padding-bottom: 0.5rem !important;
+  padding-left: 0.75rem !important;
+  padding-right: 0.75rem !important;
+  line-height: 1.3 !important;
+  font-size: 1rem;  /* keep original font size */
+}
+
+/* Navbar toggler button */
+.navbar-toggler {
+  padding: 0.4rem 0.75rem !important;
+  margin: 0 !important;
+  border: none !important;
+}
+
+
+  /* Footer */
+  footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 60px;
+  }
+  footer .list-unstyled li a {
+    color: white;
+    text-decoration: none;
+  }
+  footer .list-unstyled li a:hover {
+    text-decoration: underline;
+  }
+
+  /* Responsive Nav adjustments */
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2rem;
+    }
+    .hero p {
+      font-size: 1rem;
+    }
+  }
+  body {
+    margin: 0;
+  }
+
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    color: #333;
+  }
+  header {
+    background-color: #0d47a1;
+    color: white;
+    padding: 25px 0;
+    text-align: center;
+  }
+  header h1 {
+    margin: 0;
+    font-size: 2em;
+  }
+  .container {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 40px 0;
+  }
+  h2 {
+    color: #0d47a1;
+    margin-top: 30px;
+  }
+  p, ul {
+    line-height: 1.6;
+    color: #555;
+  }
+  ul {
+    margin-left: 20px;
+  }
+  ol {
+    margin-left: 20px;
+  }
+  .note {
+    background: #e3f2fd;
+    border-left: 4px solid #0d47a1;
+    padding: 12px 14px;
+    border-radius: 6px;
+  }
+  a.back-btn {
+    display: inline-block;
+    margin: 20px 0;
+    padding: 10px 15px;
+    background-color: #0d47a1;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+  a.back-btn:hover {
+    background-color: #1565c0;
+  }
+  </style>
+</head>
+
+<body>
+
+  <!-- Top Bar -->
+<div class="top-bar d-flex flex-wrap justify-content-between align-items-center p-2 bg-dark text-white">
+  <!-- Contact Info -->
+  <div class="contact-info d-flex flex-wrap align-items-center">
+    <a href="mailto:rktlcenterprises@gmail.com" class="text-white me-3">
+      <i class="fas fa-envelope me-1"></i> rktlcenterprises@gmail.com
+    </a>
+    <a href="tel:+917975854144" class="text-white">
+      <i class="fas fa-phone me-1"></i> 7975854144
+    </a>
+  </div>
+    <div class="social-icons">
+      <a href="https://whatsapp.com/channel/0029VbAW7iUI1rcbwdF4iN28" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.linkedin.com/feed/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://x.com/RktlcE" class="twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.instagram.com/rktlc_enterprises" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://youtube.com/@rktlcenterprises" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.pinterest.com/yourprofile" target="_blank" class="pinterest" aria-label="Pinterest Profile">
+        <i class="fab fa-pinterest"></i>
+      </a>
+      <a href="https://www.google.com/search?q=RKTLC+Enterprises" class="google" target="_blank"><i class="fab fa-google"></i></a>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="RKTLC_Logo-removebg-preview.png" alt="RKTLC Logo" style="height:50px;" />
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link fw-semibold" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="service.html#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="service.html#about">About</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="Blog.html">Blogs</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="service.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<header>
+  <h1>GST Refund</h1>
+</header>
+
+<div class="container">
+  <p><strong>GST Refund</strong> allows registered taxpayers to claim back excess taxes paid or accumulated input tax credit (ITC) in specific cases such as exports, inverted duty structure, deemed exports, and other situations. Timely refunds improve cash flow and reduce working capital lock-in.</p>
+
+  <h2>When Can You Claim a GST Refund?</h2>
+  <ul>
+    <li><strong>Zero-Rated Supplies (Exports & SEZ supplies)</strong>:
+      <ul>
+        <li>Export with payment of IGST (claim refund of IGST paid).</li>
+        <li>Export/SEZ supply under LUT/Bond (claim refund of accumulated ITC).</li>
+      </ul>
+    </li>
+    <li><strong>Inverted Duty Structure</strong> (higher GST rate on inputs than outputs).</li>
+    <li><strong>Deemed Exports</strong> (refund to supplier or recipient, as applicable).</li>
+    <li><strong>Excess balance in Electronic Cash Ledger</strong>.</li>
+    <li><strong>Refund of TDS/TCS</strong> balance.</li>
+    <li><strong>Refund on account of assessment/appeal/any other order</strong>.</li>
+    <li><strong>Tourist refund</strong> (for eligible foreign tourists on goods taken out of India).</li>
+  </ul>
+
+  <h2>Eligibility & Time Limits</h2>
+  <ul>
+    <li>Applicant must be a registered person under GST (except for specific cases like unregistered refund of deposits).</li>
+    <li><strong>Time limit:</strong> Typically <strong>2 years</strong> from the relevant date (varies with the nature of refund).</li>
+    <li>No refund of unutilized ITC is allowed for goods/services notified as excluded or where output is nil-rated/exempt (except zero-rated supplies).</li>
+  </ul>
+
+  <h2>Documents Required</h2>
+  <ul>
+    <li><strong>For exports with payment of IGST:</strong> Shipping bill, export invoice, EGM/ADP, and proof of receipt of foreign remittance (FIRC/BRC if required).</li>
+    <li><strong>For LUT/Bond (without payment of tax):</strong> LUT/Bond copy, export invoices, shipping bills, statement of exports (Statement-3/3A), and ITC details.</li>
+    <li><strong>For Inverted Duty:</strong> Purchase & sales invoices, rate-wise statements, and ITC ledger.</li>
+    <li><strong>Deemed Exports:</strong> Declaration from recipient (where applicable), proof of payment by recipient, and endorsement/certificates as per notifications.</li>
+    <li>GSTR-1, GSTR-3B filings matching the refund period; reconciliations.</li>
+    <li>Cancelled cheque/bank mandate for credit of refund.</li>
+    <li><strong>CA/CMA certificate</strong> (where refund claim exceeds the prescribed threshold) regarding unjust enrichment.</li>
+  </ul>
+
+
+
+  <h2>Processing & Timelines</h2>
+  <ul>
+    <li><strong>RFD-02</strong>: Acknowledgement of your application (or <strong>RFD-03</strong> for deficiency memo).</li>
+    <li><strong>Provisional Refund (RFD-04)</strong>: Up to <strong>90%</strong> for zero-rated claims, generally within <strong>7 days</strong> from acknowledgment.</li>
+    <li><strong>Final Order (RFD-06)</strong> and <strong>Payment Order (RFD-05)</strong>: Target within <strong>60 days</strong> from receipt of a complete application.</li>
+    <li>Delay beyond the prescribed period may attract <strong>interest</strong> as per law.</li>
+  </ul>
+
+  <h2>Important Calculations (Quick View)</h2>
+  <div class="note">
+    <p><strong>Refund of ITC for Zero-Rated Supplies (without payment):</strong><br>
+    Eligible Refund = (Turnover of zero-rated supplies × Net ITC) ÷ Adjusted Total Turnover, subject to safeguards/notifications.</p>
+    <p><strong>Inverted Duty:</strong> Refund is limited as per prescribed formula and exclusions for certain notified goods/services.</p>
+  </div>
+
+  <h2>Common Mistakes to Avoid</h2>
+  <ul>
+    <li>Mismatch between GSTR-1, GSTR-3B, and shipping bill data.</li>
+    <li>Claiming in the wrong category (e.g., choosing inverted duty instead of zero-rated).</li>
+    <li>Including blocked ITC (Section 17(5)) or ineligible credits.</li>
+    <li>Missing LUT/Bond for zero-rated supplies without payment of tax.</li>
+    <li>Submitting after the limitation period or without bank/CA certificates where required.</li>
+  </ul>
+
+  
+
+  <a href="blog.html" class="back-btn">← Back to Blog</a>
+</div>
+
+
+<!-- Footer -->
+<footer class="footer bg-dark text-white py-4 mt-5">
+  <div class="container">
+    <div class="row text-center text-md-start">
+
+      <!-- Useful Links Column -->
+      <div class="col-md-4 mb-4 mb-md-0">
+        <h5 class="mb-3">Useful Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="index.html" class="text-white text-decoration-none">Home</a></li>
+          <li><a href="service.html#services" class="text-white text-decoration-none">Services</a></li>
+          <li><a href="service.html#about" class="text-white text-decoration-none">About</a></li>
+          <li><a href="Blog.html" class="text-white text-decoration-none">Blogs</a></li>
+          <li><a href="service.html#contact" class="text-white text-decoration-none">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info Column -->
+      <div class="col-md-4 mb-4 mb-md-0">
+        <h5 class="mb-3">Contact Info</h5>
+        <p class="mb-1">
+          <i class="fas fa-envelope me-2 text-white"></i>
+          <a href="mailto:rktlcenterprises@gmail.com" class="text-white text-decoration-none">rktlcenterprises@gmail.com</a>
+        </p>
+        <p class="mb-1">
+          <i class="fas fa-phone me-2 text-white"></i>
+          <a href="tel:+917975854144" class="text-white text-decoration-none">+91 79758 54144</a>
+        </p>
+        <p class="text-white">
+          <i class="fas fa-map-marker-alt me-2 text-white"></i>
+         403, Veeru Arcade, 99/2, 8th Cross, 20th Main Rd, G Block,Sahakaranagara, Bengaluru, Karnataka - 560092
+        </p>
+      </div>
+
+      <!-- Follow Us Column -->
+      <div class="col-md-4">
+        <h5 class="mb-3">Follow Us On</h5>
+        <div class="social-icons d-flex justify-content-center justify-content-md-start gap-3 fs-4">
+          <a href="https://whatsapp.com/channel/0029VbAW7iUI1rcbwdF4iN28" target="_blank"><i class="fab fa-whatsapp text-white"></i></a>
+          <a href="https://www.linkedin.com/feed/" target="_blank"><i class="fab fa-linkedin text-white"></i></a>
+          <a href="https://x.com/RktlcE" target="_blank"><i class="fab fa-twitter text-white"></i></a>
+          <a href="https://www.instagram.com/rktlc_enterprises" target="_blank"><i class="fab fa-instagram text-white"></i></a>
+          <a href="https://youtube.com/@rktlcenterprises" target="_blank"><i class="fab fa-youtube text-white"></i></a>
+          <a href="https://www.pinterest.com/yourprofile" target="_blank"><i class="fab fa-pinterest text-white"></i></a>
+          <a href="https://www.google.com/search?q=RKTLC+Enterprises" target="_blank"><i class="fab fa-google text-white"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row mt-4">
+      <div class="col text-center small">
+        &copy; 2025 <strong>RKTLC Enterprises</strong>. All rights reserved.
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <!-- Bootstrap Bundle with Popper.js -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>RKTLC Enterprises</title>
+  <link rel="icon" type="image/png" href="/RKTLC_Logo-removebg-preview.png" />
+
+<!-- FontAwesome for icons in top bar and footer -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+<!-- Bootstrap CSS for responsive navbar and layout -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<style>
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #ffffff;
+    color: #333;
+  }
+
+  /* === Top Bar === */
+  .top-bar {
+    background: #2c3e50;
+    color: white;
+    font-size: 0.9em;
+    padding: 10px 30px;
+  }
+  .top-bar a {
+    text-decoration: none;
+    font-size: 14px;
+  }
+  .top-bar .social-icons a {
+    font-size: 16px;
+  }
+
+  /* Social Icons - show brand colors by default */
+  .social-icons a {
+    margin-left: 15px;
+    font-size: 1.1rem;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    color: inherit; /* allow brand color */
+  }
+
+  /* Brand colors */
+  .social-icons a[href*="whatsapp"] {
+    color: #25D366;
+  }
+  .social-icons a[href*="linkedin"] {
+    color: #0077b5;
+  }
+  .social-icons a.twitter {
+    color: #1da1f2;
+  }
+  .social-icons a[href*="instagram"] {
+    color: #e1306c;
+  }
+  .social-icons a[href*="youtube"] {
+    color: #FF0000;
+  }
+  .social-icons a.google {
+    color: #DB4437;
+  }
+  .social-icons a.pinterest {
+    color: #bd081c;
+  }
+
+  /* Hover effects with glow */
+  .social-icons a[href*="whatsapp"]:hover {
+    text-shadow: 0 0 8px rgba(37, 211, 102, 0.8);
+  }
+  .social-icons a.twitter:hover {
+    text-shadow: 0 0 8px rgba(29, 161, 242, 0.8);
+  }
+  .social-icons a[href*="instagram"]:hover {
+    text-shadow: 0 0 8px rgba(225, 48, 108, 0.8);
+  }
+  .social-icons a[href*="youtube"]:hover {
+    text-shadow: 0 0 8px rgba(255, 0, 0, 0.8);
+  }
+  .social-icons a.google:hover {
+    text-shadow: 0 0 8px rgba(219, 68, 55, 0.8);
+  }
+  .social-icons a.pinterest:hover {
+    text-shadow: 0 0 8px rgba(189, 8, 28, 0.8);
+  }
+  .social-icons a[href*="linkedin"]:hover {
+    color: #004182; /* darker blue on hover */
+    text-shadow: 0 0 8px rgba(0, 65, 130, 0.8);
+  }
+
+ /* Navbar Height – Moderately Larger */
+.navbar {
+  min-height: 70px !important;   /* moderately taller */
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+}
+
+/* Container inside navbar */
+.navbar .container {
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+}
+
+/* Navbar brand/logo */
+.navbar-brand {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Navbar links */
+.navbar-nav .nav-link {
+  padding-top: 0.5rem !important;  
+  padding-bottom: 0.5rem !important;
+  padding-left: 0.75rem !important;
+  padding-right: 0.75rem !important;
+  line-height: 1.3 !important;
+  font-size: 1rem;  /* keep original font size */
+}
+
+/* Navbar toggler button */
+.navbar-toggler {
+  padding: 0.4rem 0.75rem !important;
+  margin: 0 !important;
+  border: none !important;
+}
+
+  /* Footer */
+  footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 60px;
+  }
+  footer .list-unstyled li a {
+    color: white;
+    text-decoration: none;
+  }
+  footer .list-unstyled li a:hover {
+    text-decoration: underline;
+  }
+
+  /* Responsive Nav adjustments */
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2rem;
+    }
+    .hero p {
+      font-size: 1rem;
+    }
+  }
+  body {
+    margin: 0;
+  }
+
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    color: #333;
+  }
+  header {
+    background-color: #0056b3; /* Blue header */
+    color: white;
+    padding: 25px 0;
+    text-align: center;
+  }
+  header h1 {
+    margin: 0;
+    font-size: 2em;
+  }
+  .container {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 40px 0;
+  }
+  h2 {
+    color: #0056b3; /* Blue headings */
+    margin-top: 30px;
+  }
+  p, ul {
+    line-height: 1.6;
+    color: #555;
+  }
+  ul, ol {
+    margin-left: 20px;
+  }
+  .note {
+    background: #e6f0ff; /* Light blue background */
+    border-left: 4px solid #0056b3;
+    padding: 12px 14px;
+    border-radius: 6px;
+  }
+  a.back-btn {
+    display: inline-block;
+    margin: 20px 0;
+    padding: 10px 15px;
+    background-color: #0056b3;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+  a.back-btn:hover {
+    background-color: #0073e6;
+  }
+  </style>
+</head>
+
+<body>
+
+  <!-- Top Bar -->
+<div class="top-bar d-flex flex-wrap justify-content-between align-items-center p-2 bg-dark text-white">
+  <!-- Contact Info -->
+  <div class="contact-info d-flex flex-wrap align-items-center">
+    <a href="mailto:rktlcenterprises@gmail.com" class="text-white me-3">
+      <i class="fas fa-envelope me-1"></i> rktlcenterprises@gmail.com
+    </a>
+    <a href="tel:+917975854144" class="text-white">
+      <i class="fas fa-phone me-1"></i> 7975854144
+    </a>
+  </div>
+    <div class="social-icons">
+      <a href="https://whatsapp.com/channel/0029VbAW7iUI1rcbwdF4iN28" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.linkedin.com/feed/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://x.com/RktlcE" class="twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.instagram.com/rktlc_enterprises" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://youtube.com/@rktlcenterprises" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.pinterest.com/yourprofile" target="_blank" class="pinterest" aria-label="Pinterest Profile">
+        <i class="fab fa-pinterest"></i>
+      </a>
+      <a href="https://www.google.com/search?q=RKTLC+Enterprises" class="google" target="_blank"><i class="fab fa-google"></i></a>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="RKTLC_Logo-removebg-preview.png" alt="RKTLC Logo" style="height:50px;" />
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link fw-semibold" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="service.html#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="service.html#about">About</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="Blog.html">Blogs</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="service.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<header>
+  <h1>Web Development Services</h1>
+</header>
+
+<div class="container">
+  <p><strong>RKTLC Enterprises</strong> provides professional <strong>Web Development Services</strong> to help businesses build responsive, secure, and high-performing websites that drive growth and customer engagement.</p>
+
+  <h2>Our Web Development Expertise</h2>
+  <ul>
+    <li><strong>Custom Website Development:</strong> Tailored websites that reflect your brand identity.</li>
+    <li><strong>Responsive Design:</strong> Mobile-friendly layouts for seamless browsing on all devices.</li>
+    <li><strong>E-Commerce Development:</strong> Secure online stores with payment gateway integration.</li>
+    <li><strong>Content Management Systems (CMS):</strong> Easy-to-manage websites using WordPress, Joomla, or custom CMS.</li>
+    <li><strong>Web Applications:</strong> Scalable, user-friendly, and secure web-based solutions.</li>
+    <li><strong>SEO-Friendly Websites:</strong> Built to rank well on search engines and attract organic traffic.</li>
+  </ul>
+
+  <h2>Why Choose RKTLC Enterprises?</h2>
+  <ul>
+    <li>Expert team with experience in multiple industries.</li>
+    <li>Use of modern tools, frameworks, and coding standards.</li>
+    <li>Focus on user experience and business goals.</li>
+    <li>Secure, scalable, and future-ready web solutions.</li>
+    <li>Affordable pricing with high-quality results.</li>
+  </ul>
+
+  <h2>Our Development Process</h2>
+  <ol>
+    <li>Understanding client requirements and business goals.</li>
+    <li>Wireframing and UI/UX design approval.</li>
+    <li>Development with best coding practices.</li>
+    <li>Testing for speed, security, and responsiveness.</li>
+    <li>Deployment and ongoing maintenance.</li>
+  </ol>
+
+  <h2>Benefits for Your Business</h2>
+  <ul>
+    <li>Strong online presence with a professional website.</li>
+    <li>Better user experience and customer engagement.</li>
+    <li>Scalable solutions that grow with your business.</li>
+    <li>Increased leads, sales, and ROI.</li>
+  </ul>
+
+  <div class="note">
+    <strong>Note:</strong> A business website is the first impression for your customers. An effective, fast, and secure website builds trust and drives conversions.
+  </div>
+
+  <a href="blog.html" class="back-btn">← Back to Blog</a>
+</div>
+
+
+
+  <!-- Footer -->
+<footer class="footer bg-dark text-white py-4 mt-5">
+  <div class="container">
+    <div class="row text-center text-md-start">
+
+      <!-- Useful Links Column -->
+      <div class="col-md-4 mb-4 mb-md-0">
+        <h5 class="mb-3">Useful Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="index.html" class="text-white text-decoration-none">Home</a></li>
+          <li><a href="service.html#services" class="text-white text-decoration-none">Services</a></li>
+          <li><a href="service.html#about" class="text-white text-decoration-none">About</a></li>
+          <li><a href="Blog.html" class="text-white text-decoration-none">Blogs</a></li>
+          <li><a href="service.html#contact" class="text-white text-decoration-none">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info Column -->
+      <div class="col-md-4 mb-4 mb-md-0">
+        <h5 class="mb-3">Contact Info</h5>
+        <p class="mb-1">
+          <i class="fas fa-envelope me-2 text-white"></i>
+          <a href="mailto:rktlcenterprises@gmail.com" class="text-white text-decoration-none">rktlcenterprises@gmail.com</a>
+        </p>
+        <p class="mb-1">
+          <i class="fas fa-phone me-2 text-white"></i>
+          <a href="tel:+917975854144" class="text-white text-decoration-none">+91 79758 54144</a>
+        </p>
+        <p class="text-white">
+          <i class="fas fa-map-marker-alt me-2 text-white"></i>
+          403, Veeru Arcade, 99/2, 8th Cross, 20th Main Rd, G Block,Sahakaranagara, Bengaluru, Karnataka - 560092
+        </p>
+      </div>
+
+      <!-- Follow Us Column -->
+      <div class="col-md-4">
+        <h5 class="mb-3">Follow Us On</h5>
+        <div class="social-icons d-flex justify-content-center justify-content-md-start gap-3 fs-4">
+          <a href="https://whatsapp.com/channel/0029VbAW7iUI1rcbwdF4iN28" target="_blank"><i class="fab fa-whatsapp text-white"></i></a>
+          <a href="https://www.linkedin.com/feed/" target="_blank"><i class="fab fa-linkedin text-white"></i></a>
+          <a href="https://x.com/RktlcE" target="_blank"><i class="fab fa-twitter text-white"></i></a>
+          <a href="https://www.instagram.com/rktlc_enterprises" target="_blank"><i class="fab fa-instagram text-white"></i></a>
+          <a href="https://youtube.com/@rktlcenterprises" target="_blank"><i class="fab fa-youtube text-white"></i></a>
+          <a href="https://www.pinterest.com/yourprofile" target="_blank"><i class="fab fa-pinterest text-white"></i></a>
+          <a href="https://www.google.com/search?q=RKTLC+Enterprises" target="_blank"><i class="fab fa-google text-white"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row mt-4">
+      <div class="col text-center small">
+        &copy; 2025 <strong>RKTLC Enterprises</strong>. All rights reserved.
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <!-- Bootstrap Bundle with Popper.js -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
